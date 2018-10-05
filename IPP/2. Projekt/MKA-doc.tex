@@ -1,0 +1,48 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=2cm, text={17cm, 24cm}, top=2.5cm]{geometry}
+\usepackage[czech]{babel}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\providecommand{\uv} [1] {\quotedblbase #1\textquotedblleft}
+		
+\begin{document}
+\noindent
+Dokumentace úlohy: MKA: Minimalizace konečného automatu v~Pythonu 3 do IPP 2016/2017\\
+Jméno a příjmení: Roman Nahálka\\
+Login: xnahal01
+
+\section{Zadání}
+Úkolem bylo vytvořit skript v~jazyce Python 3 pro zpracování a~připadnou minimalizaci konečného automatu. Skript také dále ověřoval, že je automat dobře specifikovaný a~provedl jeho normalizovaný zápis.
+
+\section{Implementace}
+Skript je implementován v~jazyce Python 3, konkrétně ve verzi 3.6.0.
+
+\subsection{Zpracování argumentů}
+Zpracování argumentů zajišťuje funkce \texttt{parseArguments()}, která je volána jako první po spuštění skriptu. Tato funkce využívá knihovnu \texttt{argparse}, která je určena právě pro zpracování argumentů. Pro všechny argumenty platí, že mohou být zadány pouze jednou a~argumenty \texttt{-f} a~\texttt{-m} se nesmí kombinovat. Pokud funkce narazí během zpracovávání argumentů na nějakou chybu, vypíše patřičnou chybovou hlášku a ukončí skript se správným návratovým kódem. 
+
+\subsection{Načtení vstupního souboru}
+K~určení vstupního souboru, který obsahuje konečný automat, slouží přepínač \texttt{--input}. Pokud není tento přepínač zadán, zpracovává se \texttt{STDIN}. Soubor je otevřen pomocí metody \texttt{open()} s~parametrem \texttt{r}, který slouží pouze pro čtení. Pokud zadaný soubor neexistuje, skript vypíše patřičnou chybovou hlášku a~ukončí se s~návratovým kódem 2.  
+
+\subsection{Výstupní soubor}
+K~určení souboru, do kterého se má výsledný konečný automat zapsat, slouží přepínač \texttt{--output}. Pokud není tento přepínač zadán, zpracovává se \texttt{STDOUT}. Soubor je otevřen pomocí metody \texttt{opem()} s~parametrem \texttt{w}, který slouží pouze pro zápis do souboru. Skript do výstupního souboru zapisuje přesně podle specifikace ze zadání. Všechny komentáře jsou ze vstupního souboru vynechány. Pokud zadaný výstupní soubor neexistuje, skript vypíše patřičnou chybovou hlášku a~ukončí se s~návratovým kódem 3.
+
+\subsection{Zpracování vstupního konečného automatu}
+K~zpracování vstupního souboru s~konečným automatem slouží funkce \texttt{parseFile()}. Celá analýza souboru je implementována pomocí konečného automatu, jeho stavy jsou ve třídě typu \texttt{Enum} s~názvem \texttt{States}. Pro načtení dalšího znaku tato funkce používá funkci \texttt{getNextToken()}, která vrátí dalšího znak ze vstupního souboru. Tato funkce také zajišťuje ignorování bílých znaků tam kde je to potřeba a~také o~ignoraci komentářů. Pokud během analýzy dojde k~nějaké lexikální či syntaktické chybě, skript vypíše patřičnou chybovou hlášku a~ukončí se s~patřičným návratovým kódem podle typu chyby. 
+
+\subsection{Ověření dobré specifikovanosti konečného automatu}
+Po zpracování vstupního souboru se musí ověřit, že zadaný konečný automat je dobře specifikovaný, aby jsme mohli případně provést minimalizaci. Toto ověření má na starost funkce \texttt{isWellSpecified()}. Tato funkce ověří všechny podmínky, které určují, že je zadaný konečný automat dobře specifikovaný. Pokud funkce zjistí, že se nejedná o~dobře specifikovaný konečný automat, tak ukončí skript s~patřičnou chybovou hláškou a~návratovým kódem 62.
+
+\subsection{Minimalizace konečného automatu)}
+Pokud byl zadán přepínač \texttt{--minimize}, skript provede minimalizaci zadaného dobře specifikovaného konečného automatu. Minimalizace je provedena ve funkci \texttt{minimize()}, ve které je voláno několik dalších pomocných funkcí pro dílčí části algoritmu minimalizace. Algoritmus minimalizace je implementován přesně podle algoritmu uváděného v~přednáškách předmětu \texttt{IFJ}.
+
+\subsection{Nalezení neukončujícího stavu}
+Skript také umožňuje pomocí přepínače \texttt{--find-non-finishing} nalézt neukončující stav dobře specifikovaného konečného automatu. Nalezení tohoto stavu má na starost funkce \texttt{findNonFinishing()}. Pokud má zadaný dobře specifikovaný konečný automat neukončující stav, funkce ho vypíše do výstupního souboru a~ukončí skript. Pokud automat neukončující stav nemá, zapíše do výstupního souboru znak \texttt{0} a~ukončí skript.
+
+\subsection{Chybové stavy}
+V případě, že skript narazí na chyboví stav, okamžitě zavolá funkci \texttt{error()}, která na \texttt{STDERR} vypíše příslušnou chybovou hlášku a ukončí program s odpovídajícím návratovým kódem.
+
+\section{Závěr}
+Skript byl otestován pomocí základní sady testů na operačním systému \texttt{CentOS 6.5 64bit}, umístěný na školním serveru \texttt{merlin.fit.vutbr.cz}. Výstupní soubory byli porovnány pomocí programu \texttt{diff}. Základní testy byli poté rozšířený a~několik mých vlastních testů a~opět testovány na stejném školním serveru. 
+                                                                                                                                                                                    
+\end{document}

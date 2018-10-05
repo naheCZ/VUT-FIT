@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<project name="Solitaire Klondike" default="run">
+
+    <description>
+        Solitaire Klondike
+        Projekt predmetu IJA
+        Roman Nahalka (xnahal01)
+        Adam Zivcak   (xzivca03)
+        27.04.2017
+    </description>
+
+    <path id="class_path">
+        <pathelement location="src"/>
+        <pathelement location="lib"/>
+    </path>
+
+    <target name="compile" depends="clean, compile_source, jar, doc" />
+
+    <target name="play" depends="clean, compile_source, jar, run" />
+
+    <target name="all" depends="clean, compile_source, jar, doc, run" />
+
+    <target name="clean" description="Clean">
+        <delete dir="build"/>
+        <delete dir="dest-client"/>
+        <delete dir="doc"/>
+    </target>
+
+    <target name="compile_source" depends="clean" description="Compile">
+        <mkdir dir="doc"/>
+        <mkdir dir="build"/>
+        <mkdir dir="dest-client"/>
+        <javac includeantruntime="false" destdir="build">
+            <src refid="class_path"/>
+        </javac>
+    </target>
+
+    <target name="jar" description="Make Jar">
+        <copy todir="build/images" overwrite="true">
+            <fileset dir="lib/images/"/>
+        </copy>
+
+        <jar destfile="dest-client/ija-client.jar" basedir="build">
+            <manifest>
+                <attribute name="Main-Class" value="frames.OneGame"/>
+            </manifest>
+            <fileset dir="lib">
+                <include name="images/**"/>
+            </fileset>
+        </jar>
+    </target>
+
+    <target name="doc" description="Generate Javadoc documentation">
+        <javadoc sourcepath="src" destdir="doc">
+            <fileset dir="src">
+                <include name="**"/>
+            </fileset>
+        </javadoc>
+    </target>
+
+    <target name="run" description="Run application">
+        <java jar="dest-client/ija-client.jar" dir="dest-client" fork="true"/>
+    </target>
+
+</project>
+

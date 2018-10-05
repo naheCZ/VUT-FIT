@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - white_box_test_coverage.info.cleaned - assignment/white_box_tests.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">assignment</a> - white_box_tests.cpp<span style="font-size: 80%;"> (source / <a href="white_box_tests.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">white_box_test_coverage.info.cleaned</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">192</td>
+            <td class="headerCovTableEntry">192</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-02-24 19:52:32</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">54</td>
+            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntryHi">94.7 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : //======== Copyright (c) 2017, FIT VUT Brno, All rights reserved. ============//</a>
+<span class="lineNum">       2 </span>            : //
+<span class="lineNum">       3 </span>            : // Purpose:     White Box - Tests suite
+<span class="lineNum">       4 </span>            : //
+<span class="lineNum">       5 </span>            : // $NoKeywords: $ivs_project_1 $white_box_code.cpp
+<span class="lineNum">       6 </span>            : // $Author:     Roman Nahálka &lt;xnahal01@stud.fit.vutbr.cz&gt;
+<span class="lineNum">       7 </span>            : // $Date:       $2017-01-04
+<span class="lineNum">       8 </span>            : //============================================================================//
+<span class="lineNum">       9 </span>            : /**
+<span class="lineNum">      10 </span>            :  * @file white_box_tests.cpp
+<span class="lineNum">      11 </span>            :  * @author Roman Nahálka
+<span class="lineNum">      12 </span>            :  * 
+<span class="lineNum">      13 </span>            :  * @brief Implementace testu prace s maticemi.
+<span class="lineNum">      14 </span>            :  */
+<span class="lineNum">      15 </span>            : 
+<span class="lineNum">      16 </span>            : #include &quot;gtest/gtest.h&quot;
+<span class="lineNum">      17 </span>            : #include &quot;white_box_code.h&quot;
+<span class="lineNum">      18 </span>            : 
+<span class="lineNum">      19 </span>            : //============================================================================//
+<span class="lineNum">      20 </span>            : // ** ZDE DOPLNTE TESTY **
+<span class="lineNum">      21 </span>            : //
+<span class="lineNum">      22 </span>            : // Zde doplnte testy operaci nad maticemi. Cilem testovani je:
+<span class="lineNum">      23 </span>            : // 1. Dosahnout maximalniho pokryti kodu (white_box_code.cpp) testy.
+<span class="lineNum">      24 </span>            : // 2. Overit spravne chovani operaci nad maticemi v zavislosti na rozmerech 
+<span class="lineNum">      25 </span>            : //    matic.
+<span class="lineNum">      26 </span>            : //============================================================================//
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span>            : class MatrixConstruction : public ::testing::Test
+<span class="lineNum">      29 </span>            : {
+<span class="lineNum">      30 </span>            : protected:
+<span class="lineNum">      31 </span>            :         Matrix matrix;
+<a name="32"><span class="lineNum">      32 </span>            : };</a>
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span><span class="lineCov">          8 : class Matrix1x1 : public ::testing::Test</span>
+<span class="lineNum">      35 </span>            : {
+<span class="lineNum">      36 </span>            : protected:
+<a name="37"><span class="lineNum">      37 </span>            :         Matrix matrix;</a>
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span><span class="lineCov">          4 :         virtual void SetUp()</span>
+<span class="lineNum">      40 </span>            :         {
+<span class="lineNum">      41 </span><span class="lineCov">          4 :                 matrix = Matrix();</span>
+<span class="lineNum">      42 </span><span class="lineCov">          4 :         }</span>
+<a name="43"><span class="lineNum">      43 </span>            : };</a>
+<span class="lineNum">      44 </span>            : 
+<span class="lineNum">      45 </span><span class="lineCov">          8 : class Operations : public ::testing::Test</span>
+<span class="lineNum">      46 </span>            : {
+<span class="lineNum">      47 </span>            : protected:
+<span class="lineNum">      48 </span>            :         Matrix oneOne;
+<span class="lineNum">      49 </span>            :         Matrix oneOne2;
+<span class="lineNum">      50 </span>            :         Matrix twoOne;
+<span class="lineNum">      51 </span>            :         Matrix oneTwo;
+<a name="52"><span class="lineNum">      52 </span>            :         Matrix twoTwo;</a>
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span><span class="lineCov">          4 :         virtual void SetUp()</span>
+<span class="lineNum">      55 </span>            :         {
+<span class="lineNum">      56 </span><span class="lineCov">          4 :                 oneOne = Matrix();</span>
+<span class="lineNum">      57 </span><span class="lineCov">          4 :                 oneOne2 = Matrix();</span>
+<span class="lineNum">      58 </span><span class="lineCov">          4 :                 twoOne = Matrix(2, 1);</span>
+<span class="lineNum">      59 </span><span class="lineCov">          4 :                 oneTwo = Matrix(1, 2);</span>
+<span class="lineNum">      60 </span><span class="lineCov">          4 :                 twoTwo = Matrix(2, 2);</span>
+<span class="lineNum">      61 </span><span class="lineCov">          4 :         }</span>
+<a name="62"><span class="lineNum">      62 </span>            : };</a>
+<span class="lineNum">      63 </span>            : 
+<span class="lineNum">      64 </span><span class="lineCov">          2 : class Equations : public ::testing::Test</span>
+<span class="lineNum">      65 </span>            : {
+<span class="lineNum">      66 </span>            : protected:
+<span class="lineNum">      67 </span>            :         Matrix threeThree;
+<span class="lineNum">      68 </span>            :         Matrix fourFour;
+<span class="lineNum">      69 </span>            :         Matrix singular;
+<span class="lineNum">      70 </span>            :         Matrix oneTwo;
+<a name="71"><span class="lineNum">      71 </span>            :         Matrix oneOne;</a>
+<span class="lineNum">      72 </span>            : 
+<span class="lineNum">      73 </span><span class="lineCov">          1 :         virtual void SetUp()</span>
+<span class="lineNum">      74 </span>            :         {
+<span class="lineNum">      75 </span><span class="lineCov">          1 :                 threeThree = setThree();</span>
+<span class="lineNum">      76 </span><span class="lineCov">          1 :                 fourFour = setFour();</span>
+<span class="lineNum">      77 </span><span class="lineCov">          1 :                 singular = setSingular();</span>
+<span class="lineNum">      78 </span><span class="lineCov">          1 :                 Matrix oneOne = Matrix();</span>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">          1 :         }</span></a>
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span><span class="lineCov">          1 :         Matrix setThree()</span>
+<span class="lineNum">      82 </span>            :         {
+<span class="lineNum">      83 </span><span class="lineCov">          2 :                 std::vector&lt;std::vector&lt;double&gt;&gt; values(3, std::vector&lt;double&gt;(3));</span>
+<span class="lineNum">      84 </span><span class="lineCov">          1 :                 Matrix matrix = Matrix(3, 3);</span>
+<span class="lineNum">      85 </span>            : 
+<span class="lineNum">      86 </span><span class="lineCov">          1 :                 values[0][0] = 1;</span>
+<span class="lineNum">      87 </span><span class="lineCov">          1 :                 values[0][1] = 2;</span>
+<span class="lineNum">      88 </span><span class="lineCov">          1 :                 values[0][2] = 3;</span>
+<span class="lineNum">      89 </span>            : 
+<span class="lineNum">      90 </span><span class="lineCov">          1 :                 values[1][0] = 2;</span>
+<span class="lineNum">      91 </span><span class="lineCov">          1 :                 values[1][1] = -1;</span>
+<span class="lineNum">      92 </span><span class="lineCov">          1 :                 values[1][2] = 1;</span>
+<span class="lineNum">      93 </span>            : 
+<span class="lineNum">      94 </span><span class="lineCov">          1 :                 values[2][0] = 3;</span>
+<span class="lineNum">      95 </span><span class="lineCov">          1 :                 values[2][1] = 0;</span>
+<span class="lineNum">      96 </span><span class="lineCov">          1 :                 values[2][2] = -1;</span>
+<span class="lineNum">      97 </span>            : 
+<span class="lineNum">      98 </span><span class="lineCov">          1 :                 matrix.set(values);</span>
+<span class="lineNum">      99 </span>            : 
+<span class="lineNum">     100 </span><span class="lineCov">          2 :                 return matrix;</span>
+<a name="101"><span class="lineNum">     101 </span>            :         }</a>
+<span class="lineNum">     102 </span>            : 
+<span class="lineNum">     103 </span><span class="lineCov">          1 :         Matrix setFour()</span>
+<span class="lineNum">     104 </span>            :         {
+<span class="lineNum">     105 </span><span class="lineCov">          2 :                 std::vector&lt;std::vector&lt;double&gt;&gt; values(4, std::vector&lt;double&gt;(4));</span>
+<span class="lineNum">     106 </span><span class="lineCov">          1 :                 Matrix matrix = Matrix(4, 4);</span>
+<span class="lineNum">     107 </span>            : 
+<span class="lineNum">     108 </span><span class="lineCov">          1 :                 values[0][0] = 3;</span>
+<span class="lineNum">     109 </span><span class="lineCov">          1 :                 values[0][1] = 2;</span>
+<span class="lineNum">     110 </span><span class="lineCov">          1 :                 values[0][2] = 0;</span>
+<span class="lineNum">     111 </span><span class="lineCov">          1 :                 values[0][3] = 1;</span>
+<span class="lineNum">     112 </span>            : 
+<span class="lineNum">     113 </span><span class="lineCov">          1 :                 values[1][0] = 2;</span>
+<span class="lineNum">     114 </span><span class="lineCov">          1 :                 values[1][1] = 0;</span>
+<span class="lineNum">     115 </span><span class="lineCov">          1 :                 values[1][2] = 3;</span>
+<span class="lineNum">     116 </span><span class="lineCov">          1 :                 values[1][3] = 2;</span>
+<span class="lineNum">     117 </span>            : 
+<span class="lineNum">     118 </span><span class="lineCov">          1 :                 values[2][0] = 1;</span>
+<span class="lineNum">     119 </span><span class="lineCov">          1 :                 values[2][1] = 3;</span>
+<span class="lineNum">     120 </span><span class="lineCov">          1 :                 values[2][2] = 5;</span>
+<span class="lineNum">     121 </span><span class="lineCov">          1 :                 values[2][3] = 2;</span>
+<span class="lineNum">     122 </span>            : 
+<span class="lineNum">     123 </span><span class="lineCov">          1 :                 values[3][0] = 2;</span>
+<span class="lineNum">     124 </span><span class="lineCov">          1 :                 values[3][1] = 3;</span>
+<span class="lineNum">     125 </span><span class="lineCov">          1 :                 values[3][2] = 0;</span>
+<span class="lineNum">     126 </span><span class="lineCov">          1 :                 values[3][3] = 5;</span>
+<span class="lineNum">     127 </span>            : 
+<span class="lineNum">     128 </span><span class="lineCov">          1 :                 matrix.set(values);</span>
+<span class="lineNum">     129 </span>            : 
+<span class="lineNum">     130 </span><span class="lineCov">          2 :                 return matrix;</span>
+<a name="131"><span class="lineNum">     131 </span>            :         }</a>
+<span class="lineNum">     132 </span>            : 
+<span class="lineNum">     133 </span><span class="lineCov">          1 :         Matrix setSingular()</span>
+<span class="lineNum">     134 </span>            :         {
+<span class="lineNum">     135 </span><span class="lineCov">          2 :                 std::vector&lt;std::vector&lt;double&gt;&gt; values(2, std::vector&lt;double&gt;(2));</span>
+<span class="lineNum">     136 </span><span class="lineCov">          1 :                 Matrix matrix = Matrix(2, 2);</span>
+<span class="lineNum">     137 </span>            : 
+<span class="lineNum">     138 </span><span class="lineCov">          1 :                 values[0][0] = 1;</span>
+<span class="lineNum">     139 </span><span class="lineCov">          1 :                 values[0][1] = -2;</span>
+<span class="lineNum">     140 </span>            : 
+<span class="lineNum">     141 </span><span class="lineCov">          1 :                 values[1][0] = -2;</span>
+<span class="lineNum">     142 </span><span class="lineCov">          1 :                 values[1][1] = 4;</span>
+<span class="lineNum">     143 </span>            : 
+<span class="lineNum">     144 </span><span class="lineCov">          1 :                 matrix.set(values);</span>
+<span class="lineNum">     145 </span>            : 
+<span class="lineNum">     146 </span><span class="lineCov">          2 :                 return matrix;</span>
+<span class="lineNum">     147 </span>            :         }
+<a name="148"><span class="lineNum">     148 </span>            : };</a>
+<span class="lineNum">     149 </span>            : 
+<span class="lineNum">     150 </span><span class="lineCov">          5 : TEST(MatrixConstruction, Constructor)</span>
+<span class="lineNum">     151 </span>            : {
+<span class="lineNum">     152 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(Matrix());</span>
+<span class="lineNum">     153 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(Matrix(3, 3));</span>
+<span class="lineNum">     154 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(Matrix(2, 5));</span>
+<span class="lineNum">     155 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(Matrix(5, 2));</span>
+<span class="lineNum">     156 </span>            :         
+<span class="lineNum">     157 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(Matrix(0, 0));</span>
+<span class="lineNum">     158 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(Matrix(0, 1));</span>
+<span class="lineNum">     159 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(Matrix(1, 0));</span>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     161 </span>            : 
+<span class="lineNum">     162 </span><span class="lineCov">          5 : TEST_F(Matrix1x1, Set)</span>
+<span class="lineNum">     163 </span>            : {
+<span class="lineNum">     164 </span><span class="lineCov">          1 :         EXPECT_TRUE(matrix.set(0, 0, 10.0));</span>
+<span class="lineNum">     165 </span>            :         
+<span class="lineNum">     166 </span><span class="lineCov">          1 :         EXPECT_FALSE(matrix.set(0, 1, 10.5));</span>
+<span class="lineNum">     167 </span><span class="lineCov">          1 :         EXPECT_FALSE(matrix.set(1, 0, 11.0));</span>
+<span class="lineNum">     168 </span><span class="lineCov">          1 :         EXPECT_FALSE(matrix.set(1, 1, 11.5));</span>
+<a name="169"><span class="lineNum">     169 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     170 </span>            : 
+<span class="lineNum">     171 </span><span class="lineCov">          5 : TEST_F(Matrix1x1, SetField)</span>
+<span class="lineNum">     172 </span>            : {
+<span class="lineNum">     173 </span><span class="lineCov">          2 :         std::vector&lt;std::vector&lt;double&gt;&gt; values(1, std::vector&lt;double&gt;(1, 0));</span>
+<span class="lineNum">     174 </span>            : 
+<span class="lineNum">     175 </span><span class="lineCov">          1 :         values[0][0] = 555.0;</span>
+<span class="lineNum">     176 </span>            : 
+<span class="lineNum">     177 </span><span class="lineCov">          1 :         EXPECT_TRUE(matrix.set(values));</span>
+<span class="lineNum">     178 </span>            : 
+<span class="lineNum">     179 </span><span class="lineCov">          1 :         values.resize(2, std::vector&lt;double&gt;(2));</span>
+<span class="lineNum">     180 </span>            : 
+<span class="lineNum">     181 </span><span class="lineCov">          1 :         values[0][0] = 55.0;</span>
+<span class="lineNum">     182 </span><span class="lineCov">          1 :         values[0][1] = 12.0;</span>
+<span class="lineNum">     183 </span><span class="lineCov">          1 :         values[1][0] = 13.5;</span>
+<span class="lineNum">     184 </span><span class="lineCov">          1 :         values[1][1] = 14.0;</span>
+<span class="lineNum">     185 </span>            : 
+<span class="lineNum">     186 </span><span class="lineCov">          1 :         EXPECT_FALSE(matrix.set(values));</span>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     188 </span>            : 
+<span class="lineNum">     189 </span><span class="lineCov">          5 : TEST_F(Matrix1x1, Get)</span>
+<span class="lineNum">     190 </span>            : {
+<span class="lineNum">     191 </span><span class="lineCov">          1 :         EXPECT_EQ(matrix.get(0, 0), 0);</span>
+<span class="lineNum">     192 </span>            : 
+<span class="lineNum">     193 </span><span class="lineCov">          1 :         EXPECT_TRUE(std::isnan(matrix.get(0, 1)));</span>
+<span class="lineNum">     194 </span><span class="lineCov">          1 :         EXPECT_TRUE(std::isnan(matrix.get(1, 0)));</span>
+<span class="lineNum">     195 </span><span class="lineCov">          1 :         EXPECT_TRUE(std::isnan(matrix.get(1, 1)));</span>
+<a name="196"><span class="lineNum">     196 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     197 </span>            : 
+<span class="lineNum">     198 </span><span class="lineCov">          5 : TEST_F(Matrix1x1, SetAndGet)</span>
+<span class="lineNum">     199 </span>            : {
+<span class="lineNum">     200 </span><span class="lineCov">          1 :         EXPECT_TRUE(matrix.set(0, 0, 10.5));</span>
+<span class="lineNum">     201 </span>            : 
+<span class="lineNum">     202 </span><span class="lineCov">          1 :         EXPECT_EQ(matrix.get(0, 0), 10.5);</span>
+<a name="203"><span class="lineNum">     203 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     204 </span>            : 
+<span class="lineNum">     205 </span><span class="lineCov">          5 : TEST_F(Operations, Equal)</span>
+<span class="lineNum">     206 </span>            : {
+<span class="lineNum">     207 </span><span class="lineCov">          1 :         EXPECT_TRUE(oneOne.operator==(oneOne2));</span>
+<span class="lineNum">     208 </span>            :         
+<span class="lineNum">     209 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneOne2.set(0, 0, 5.0));</span>
+<span class="lineNum">     210 </span><span class="lineCov">          1 :         EXPECT_FALSE(oneOne.operator==(oneOne2));</span>
+<span class="lineNum">     211 </span>            : 
+<span class="lineNum">     212 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneOne.operator==(oneTwo));</span>
+<span class="lineNum">     213 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneOne.operator==(twoOne));</span>
+<span class="lineNum">     214 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneOne.operator==(twoTwo));</span>
+<a name="215"><span class="lineNum">     215 </span>            : }</a>
+<span class="lineNum">     216 </span>            : 
+<span class="lineNum">     217 </span><span class="lineCov">          5 : TEST_F(Operations, Add)</span>
+<span class="lineNum">     218 </span>            : {
+<span class="lineNum">     219 </span><span class="lineCov">          2 :         Matrix result;</span>
+<span class="lineNum">     220 </span>            : 
+<span class="lineNum">     221 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneOne.set(0, 0, 5.0));</span>
+<span class="lineNum">     222 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneOne2.set(0, 0, 2.5));</span>
+<span class="lineNum">     223 </span>            : 
+<span class="lineNum">     224 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(result = oneOne.operator+(oneOne2));</span>
+<span class="lineNum">     225 </span><span class="lineCov">          1 :         EXPECT_EQ(result.get(0, 0), 7.5);</span>
+<span class="lineNum">     226 </span>            : 
+<span class="lineNum">     227 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneOne.operator+(oneTwo));</span>
+<span class="lineNum">     228 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneOne.operator+(twoOne));</span>
+<span class="lineNum">     229 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneOne.operator+(twoTwo));</span>
+<a name="230"><span class="lineNum">     230 </span>            : }</a>
+<span class="lineNum">     231 </span>            : 
+<span class="lineNum">     232 </span><span class="lineCov">          5 : TEST_F(Operations, MatrixMultiplication)</span>
+<span class="lineNum">     233 </span>            : {
+<span class="lineNum">     234 </span><span class="lineCov">          2 :         Matrix result;</span>
+<span class="lineNum">     235 </span>            : 
+<span class="lineNum">     236 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneOne.set(0, 0, 10.0));</span>
+<span class="lineNum">     237 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneOne2.set(0, 0, 1.5));</span>
+<span class="lineNum">     238 </span>            : 
+<span class="lineNum">     239 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(result = oneOne.operator*(oneOne2));</span>
+<span class="lineNum">     240 </span><span class="lineCov">          1 :         EXPECT_EQ(result.get(0, 0), 15.0);</span>
+<span class="lineNum">     241 </span>            : 
+<span class="lineNum">     242 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneTwo.set(0, 0, 1.0));</span>
+<span class="lineNum">     243 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneTwo.set(0, 1, 2.0));</span>
+<span class="lineNum">     244 </span>            : 
+<span class="lineNum">     245 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(result = oneOne.operator*(oneTwo));</span>
+<span class="lineNum">     246 </span><span class="lineCov">          1 :         EXPECT_EQ(result.get(0, 0), 10.0);</span>
+<span class="lineNum">     247 </span><span class="lineCov">          1 :         EXPECT_EQ(result.get(0, 1), 20.0);</span>
+<span class="lineNum">     248 </span>            : 
+<span class="lineNum">     249 </span><span class="lineCov">          1 :         ASSERT_TRUE(twoOne.set(0, 0, 3.4));</span>
+<span class="lineNum">     250 </span><span class="lineCov">          1 :         ASSERT_TRUE(twoOne.set(1, 0, 7.5));</span>
+<span class="lineNum">     251 </span>            : 
+<span class="lineNum">     252 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(result = twoOne.operator*(oneTwo));</span>
+<span class="lineNum">     253 </span><span class="lineCov">          1 :         EXPECT_EQ(result.get(0, 0), 3.4);</span>
+<span class="lineNum">     254 </span><span class="lineCov">          1 :         EXPECT_EQ(result.get(0, 1), 6.8);</span>
+<span class="lineNum">     255 </span><span class="lineCov">          1 :         EXPECT_EQ(result.get(1, 0), 7.5);</span>
+<span class="lineNum">     256 </span><span class="lineCov">          1 :         EXPECT_EQ(result.get(1, 1), 15.0);</span>
+<span class="lineNum">     257 </span>            : 
+<span class="lineNum">     258 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneOne.operator*(twoOne));</span>
+<span class="lineNum">     259 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneOne.operator*(twoTwo));</span>
+<a name="260"><span class="lineNum">     260 </span>            : }</a>
+<span class="lineNum">     261 </span>            : 
+<span class="lineNum">     262 </span><span class="lineCov">          5 : TEST_F(Operations, NumberMultiplication)</span>
+<span class="lineNum">     263 </span>            : {
+<span class="lineNum">     264 </span><span class="lineCov">          2 :         Matrix result;</span>
+<span class="lineNum">     265 </span>            : 
+<span class="lineNum">     266 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneOne.set(0, 0, 15.5));</span>
+<span class="lineNum">     267 </span>            :         
+<span class="lineNum">     268 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneTwo.set(0, 0, 13.3));</span>
+<span class="lineNum">     269 </span><span class="lineCov">          1 :         ASSERT_TRUE(oneTwo.set(0, 1, 12.7));</span>
+<span class="lineNum">     270 </span>            :         
+<span class="lineNum">     271 </span><span class="lineCov">          1 :         ASSERT_TRUE(twoOne.set(0, 0, 7.5));</span>
+<span class="lineNum">     272 </span><span class="lineCov">          1 :         ASSERT_TRUE(twoOne.set(1, 0, 11.1));</span>
+<span class="lineNum">     273 </span>            : 
+<span class="lineNum">     274 </span><span class="lineCov">          1 :         ASSERT_TRUE(twoTwo.set(0, 0, 20.0));</span>
+<span class="lineNum">     275 </span><span class="lineCov">          1 :         ASSERT_TRUE(twoTwo.set(0, 1, 3.3));</span>
+<span class="lineNum">     276 </span><span class="lineCov">          1 :         ASSERT_TRUE(twoTwo.set(1, 0, 8.7));</span>
+<span class="lineNum">     277 </span><span class="lineCov">          1 :         ASSERT_TRUE(twoTwo.set(1, 1, 5.5));</span>
+<span class="lineNum">     278 </span>            : 
+<span class="lineNum">     279 </span><span class="lineCov">          1 :         result = oneOne.operator*(2);</span>
+<span class="lineNum">     280 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(0, 0), 31.0);</span>
+<span class="lineNum">     281 </span>            : 
+<span class="lineNum">     282 </span><span class="lineCov">          1 :         result = oneTwo.operator*(3.5);</span>
+<span class="lineNum">     283 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(0, 0), 46.55);</span>
+<span class="lineNum">     284 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(0, 1), 44.45);</span>
+<span class="lineNum">     285 </span>            : 
+<span class="lineNum">     286 </span><span class="lineCov">          1 :         result = twoOne.operator*(1.5);</span>
+<span class="lineNum">     287 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(0, 0), 11.25);</span>
+<span class="lineNum">     288 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(1, 0), 16.65);</span>
+<span class="lineNum">     289 </span>            : 
+<span class="lineNum">     290 </span><span class="lineCov">          1 :         result = twoTwo.operator*(3.0);</span>
+<span class="lineNum">     291 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(0, 0), 60.0);</span>
+<span class="lineNum">     292 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(0, 1), 9.9);</span>
+<span class="lineNum">     293 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(1, 0), 26.1);</span>
+<span class="lineNum">     294 </span><span class="lineCov">          1 :         EXPECT_DOUBLE_EQ(result.get(1, 1), 16.5);</span>
+<a name="295"><span class="lineNum">     295 </span>            : }</a>
+<span class="lineNum">     296 </span>            : 
+<span class="lineNum">     297 </span><span class="lineCov">          5 : TEST_F(Equations, EquationsSolve)</span>
+<span class="lineNum">     298 </span>            : {
+<span class="lineNum">     299 </span><span class="lineCov">          2 :         std::vector&lt;double&gt; result = std::vector&lt;double&gt;(3);</span>
+<span class="lineNum">     300 </span><span class="lineCov">          2 :         std::vector&lt;double&gt; rightSide = std::vector&lt;double&gt;(3);</span>
+<span class="lineNum">     301 </span>            : 
+<span class="lineNum">     302 </span><span class="lineCov">          1 :         rightSide[0] = 9;</span>
+<span class="lineNum">     303 </span><span class="lineCov">          1 :         rightSide[1] = 8;</span>
+<span class="lineNum">     304 </span><span class="lineCov">          1 :         rightSide[2] = 3;</span>
+<span class="lineNum">     305 </span>            : 
+<span class="lineNum">     306 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(result = threeThree.solveEquation(rightSide));</span>
+<span class="lineNum">     307 </span><span class="lineCov">          1 :         EXPECT_EQ(result[0], 2);</span>
+<span class="lineNum">     308 </span><span class="lineCov">          1 :         EXPECT_EQ(result[1], -1);</span>
+<span class="lineNum">     309 </span><span class="lineCov">          1 :         EXPECT_EQ(result[2], 3);</span>
+<span class="lineNum">     310 </span>            : 
+<span class="lineNum">     311 </span><span class="lineCov">          1 :         rightSide.resize(4);</span>
+<span class="lineNum">     312 </span><span class="lineCov">          1 :         result.resize(4);</span>
+<span class="lineNum">     313 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(threeThree.solveEquation(rightSide));</span>
+<span class="lineNum">     314 </span>            : 
+<span class="lineNum">     315 </span><span class="lineCov">          1 :         rightSide[0] = 16;</span>
+<span class="lineNum">     316 </span><span class="lineCov">          1 :         rightSide[1] = 12;</span>
+<span class="lineNum">     317 </span><span class="lineCov">          1 :         rightSide[2] = 19;</span>
+<span class="lineNum">     318 </span><span class="lineCov">          1 :         rightSide[3] = 33;</span>
+<span class="lineNum">     319 </span>            : 
+<span class="lineNum">     320 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(result = fourFour.solveEquation(rightSide));</span>
+<span class="lineNum">     321 </span><span class="lineCov">          1 :         EXPECT_EQ(result[0], 2);</span>
+<span class="lineNum">     322 </span><span class="lineCov">          1 :         EXPECT_EQ(result[1], 3);</span>
+<span class="lineNum">     323 </span><span class="lineCov">          1 :         EXPECT_EQ(result[2], 0);</span>
+<span class="lineNum">     324 </span><span class="lineCov">          1 :         EXPECT_EQ(result[3], 4);</span>
+<span class="lineNum">     325 </span>            : 
+<span class="lineNum">     326 </span><span class="lineCov">          1 :         rightSide.resize(2);</span>
+<span class="lineNum">     327 </span><span class="lineCov">          1 :         rightSide[0] = 5.0;</span>
+<span class="lineNum">     328 </span><span class="lineCov">          1 :         rightSide[1] = 1.0;</span>
+<span class="lineNum">     329 </span><span class="lineCov">          1 :         oneTwo = Matrix(1, 2);</span>
+<span class="lineNum">     330 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(oneTwo.solveEquation(rightSide));</span>
+<span class="lineNum">     331 </span><span class="lineCov">          2 :         EXPECT_ANY_THROW(singular.solveEquation(rightSide));</span>
+<span class="lineNum">     332 </span>            : 
+<span class="lineNum">     333 </span><span class="lineCov">          1 :         rightSide.resize(1);</span>
+<span class="lineNum">     334 </span><span class="lineCov">          1 :         rightSide[0] = 10.0;</span>
+<a name="335"><span class="lineNum">     335 </span><span class="lineCov">          1 :         oneOne.set(0, 0, 10.0);</span></a>
+<span class="lineNum">     336 </span><span class="lineCov">          1 :         EXPECT_NO_THROW(oneOne.solveEquation(rightSide));</span>
+<span class="lineNum">     337 </span><span class="lineCov">          4 : }</span>
+<span class="lineNum">     338 </span>            : 
+<span class="lineNum">     339 </span>            : /*** Konec souboru white_box_tests.cpp ***/
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.12</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

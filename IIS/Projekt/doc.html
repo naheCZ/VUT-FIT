@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Projekt IIS</title>
+    <style type="text/css">
+    	table { border-collapse: collapse; }
+    	td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    	dt { font-weight: bold; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+
+<!-- Zkontrolujte prosím nastavení kódování v hlavičce dokumentu 
+     podle pouľitého editoru -->
+
+<h1>Restaurace</h1> <!-- Nahradte názvem svého zadání -->
+
+<dl>
+	<dt>Autoři</dt>
+	<dd>Roman Nahálka <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+	    <a href="mailto:xnahal01@stud.fit.vutbr.cz">xnahal01@stud.fit.vutbr.cz</a> -
+		frontend
+	</dd>
+	<dd>Druhé jméno <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+	    <a href="mailto:xmihal07@stud.fit.vutbr.cz">xmihal07@stud.fit.vutbr.cz</a> - 
+		backend
+	</dd>
+	<dt>URL aplikace</dt>
+	<dd><a href="http://www.stud.fit.vutbr.cz/~xnahal01/IIS">http://www.stud.fit.vutbr.cz/~xnahal01/IIS</a></dd>
+</dl>
+
+<h2>Uživatelé systému pro testování</h2>
+<table>
+<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>xnahal01</td><td>heslo</td><td>Zákazník</td></tr>
+<tr><td>xmihal07</td><td>heslo</td><td>Zaměstnanec</td></tr>
+</table>
+
+<h2>Implementace</h2>
+<p>Aplikace je spuštěna skriptem index.php, ze ktérého se jde dostat na další části implementace
+<ul>
+  <li>info.php - Stránka, se stručnémi informacemi o restauraci</li>
+  <li>jidelak.php - Stránka, obsahující jídelní lístek restaurace</li>
+  <li>nova.php - Stránka, na které lze vytvořit novou rezervaci</li>
+  <li>prihlaseni.php - Stránka s přihlášením do systému</li>
+  <li>rezervace.php - Stránka s obsahem rezervací</li>
+  <li>objednavka.php - Stránka pro vytvoření nové objednávky</li>
+  <li>Db.php - SQL wrapper</li>
+  <li>header.html - Hlavička, stejná pro všechny stránky</li>
+  <li>footer.html - Zápatí stránky, společné pro všechny stránky</li>
+  <li>styly.css - Vlastní kaskádové styly</li>
+</ul>
+</p>
+
+<h2>Instalace</h2>
+<ul>
+<li>Zkopírovat všechny soubory na server, kde má aplikace běžet</li>
+<li>Spustit skript s databází</li>
+<li>Vyžaduje PHP, MySQL, knihovnu Bootstrap v4.0.0-beta.2 a jQuery v3.2.1</li>
+</ul>
+
+<h2>Známé problémy</h2>
+<p>Při rezervaci nelze vybrat volný stůl, objednávka je na jeden pokrm</p>
+<p>Tyto nedostaky jsou způsobeny technickými potížemi s databází, které nás během implementace postihli.</p>
+
+</body>
+</html>

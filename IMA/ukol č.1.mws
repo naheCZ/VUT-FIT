@@ -1,0 +1,118 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Comment" 2 18 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Heading 1" -1 3 1 
+{CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 
+4 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Ti
+mes" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 0 1 }
+{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 
+2 2 2 2 2 1 1 1 1 }3 1 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {PARA 0 "" 0 "" {TEXT -1 0 "" }}{SECT 0 {PARA 3 "" 0 "" {TEXT 
+-1 11 "P\370\355klad \350.1" }}{EXCHG {PARA 0 "" 0 "" {TEXT -1 0 "" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "
+" {TEXT -1 11 "P\370\355klad \350.2" }}{EXCHG {PARA 0 "" 0 "" {TEXT 
+-1 52 "Najd\354te asymptoty grafu funkce f (x) = x \327 arccotg x" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "f2:=x-> x*arccot(x);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#f2Gf*6#%\"xG6\"6$%)operatorG%&arrow
+GF(*&9$\"\"\"-%'arccotG6#F-F.F(F(F(" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 12 "plot(f2(x));" }}{PARA 13 "" 1 "" {GLPLOT2D 217 217 
+217 {PLOTDATA 2 "6%-%'CURVESG6$7S7$$!#5\"\"!$!3WJ')4,S#>/$!#;7$$!3!pmm
+m\"p0k&*!#<$!3$G;Pk8**\\!HF-7$$!3uKL$3<XZ=*F1$!35U,rU^'ey#F-7$$!3WmmmT
+%p\"e()F1$!3qtB8s7*=l#F-7$$!3/nmm\"4m(G$)F1$!3*Rz-$\\a.<DF-7$$!3OLL$3i
+.9!zF1$!3G#*)yj*z#GQ#F-7$$!3fmm;/R=0vF1$!3#G$zF6'3%eAF-7$$!3k++]P8#\\4
+(F1$!3:l.(Ro*eH@F-7$$!3Kmm;/siqmF1$!3y,J+5&yj*>F-7$$!3Q****\\(y$pZiF1$
+!3gWY&G'>hj=F-7$$!3jKLL$yaE\"eF1$!3j8\"4Fxoqs\"F-7$$!3<mmm\">s%HaF1$!3
+sz<%fEFog\"F-7$$!3]******\\$*4)*\\F1$!3eXCi2C]r9F-7$$!3o******\\_&\\c%
+F1$!3nEH$H.ycL\"F-7$$!3%)******\\1aZTF1$!32n)e*p6'[?\"F-7$$!3Imm;/#)[o
+PF1$!3I\"e(y=#eh3\"F-7$$!3%HLLL=exJ$F1$!3#4a-]\\w<X*F17$$!3lKLLL2$f$HF
+1$!39,48GCof#)F17$$!3%)****\\PYx\"\\#F1$!3/C$Gerpr(oF17$$!3gLLLL7i)4#F
+1$!3[!)>(zK5)fcF17$$!3o)***\\P'psm\"F1$!3&zl>C1BrL%F17$$!3?****\\74_c7
+F1$!3\")o'eY9QG5$F17$$!3M:LL$3x%z#)!#=$!37L<m_c5t=F17$$!3()HLL3s$QM%Fe
+r$!3&)\\c?'[_Lg)Fer7$$!3]^omm;zr)*!#?$!3]cJT>BSg:!#>7$$\"3fVLLezw5VFer
+$\"3+<%pC.Go,&Fer7$$\"3-.++v$Q#\\\")Fer$\"3mJgPC'\\&GsFer7$$\"3%\\LL$e
+\"*[H7F1$\"3Optk*Hq_R)Fer7$$\"3=++++dxd;F1$\"35jLFEB6)**)Fer7$$\"3e+++
+D0xw?F1$\"3xar_;/b>$*Fer7$$\"35,+]i&p@[#F1$\"3y-\"*oenB1&*Fer7$$\"3+++
++vgHKHF1$\"3'[x5:a>tj*Fer7$$\"3ElmmmZvOLF1$\"3MN4W'*3y:(*Fer7$$\"3%4++
++v+'oPF1$\"3#o&*zChRZx*Fer7$$\"3UKL$eR<*fTF1$\"3sl3$)>8z8)*Fer7$$\"3K-
+++])Hxe%F1$\"3[k*)eGL*f%)*Fer7$$\"3!fmm\"H!o-*\\F1$\"3/4/:Q9Gp)*Fer7$$
+\"3X,+]7k.6aF1$\"3s)=tn]J%)))*Fer7$$\"3#emmmT9C#eF1$\"3Id=s)[xL!**Fer7
+$$\"33****\\i!*3`iF1$\"3DZ!yrlNg\"**Fer7$$\"3;NLLL*zym'F1$\"3)GTx*yI-E
+**Fer7$$\"3'eLL$3N1#4(F1$\"3.Z\\(z)p]M**Fer7$$\"3,pm;HYt7vF1$\"3_-^Ma9
+cT**Fer7$$\"37-+++xG**yF1$\"3K_nbyz3Z**Fer7$$\"3gpmmT6KU$)F1$\"35)Hgl6
+7D&**Fer7$$\"3qNLLLbdQ()F1$\"3m,8^v%)oc**Fer7$$\"3[++]i`1h\"*F1$\"3E(o
+P@hj0'**Fer7$$\"3A-+]P?Wl&*F1$\"39h<g^i!Q'**Fer7$$\"#5F*$\"3w&=;\"\\_'
+o'**Fer-%'COLOURG6&%$RGBG$\"*++++\"!\")$F*F*Fc[l-%+AXESLABELSG6$%\"xGQ
+!6\"-%%VIEWG6$;F(Fhz%(DEFAULTG" 1 2 0 1 10 0 2 9 1 4 2 1.000000 
+45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 53 "Limit(f2(x)/x,x=infinity)=limit(f2(x)/x,x=-infinity);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#/-%&LimitG6$-%'arccotG6#%\"xG/F*%)
+infinityG%#PiG" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "a:= Pi;" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"aG%#PiG" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 57 "Limit(f2(x)-a*x,x=infinity)=limit(f2(x)-a*x,x=-i
+nfinity);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#/-%&LimitG6$,&*&%\"xG\"\"
+\"-%'arccotG6#F)F*F**&%#PiGF*F)F*!\"\"/F)%)infinityGF*" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "b:=1;" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%\"bG\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "asymp
+tota:= a*x+b;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%*asymptotaG,&*&%#Pi
+G\"\"\"%\"xGF(F(F(F(" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 11 "p\370
+\355klad \350.3" }}{EXCHG {PARA 0 "" 0 "" {TEXT -1 169 "Na grafu funkc
+e f (x) =sqrt(1/2 *  x + 2)  najd\354te bod, kter\375 m\341 nejkrat
+\232\355 vzd\341lenost od po\350\341tku sou\370adnic a ur\350ete tuto \+
+nejmen\232\355 vzd\341lenost. \330e\232te jako \372lohu na extr\351m.
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "f3:=x-> sqrt(x/2 +2);" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#f3Gf*6#%\"xG6\"6$%)operatorG%&arr
+owGF(-%%sqrtG6#,&*&#\"\"\"\"\"#F29$F2F2F3F2F(F(F(" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 12 "plot(f3(x));" }}{PARA 13 "" 1 "" {GLPLOT2D 
+217 217 217 {PLOTDATA 2 "6%-%'CURVESG6$7J7$$!39+++$f]N*R!#<$\"3I>g5'GZ
+'yc!#>7$$!3%)*****R?0<)RF*$\"3+K/'40.Uc*F-7$$!3/+++;)f)pRF*$\"3O*G*HII
+gF7!#=7$$!3;+++FW,eRF*$\"3iwi%Qw)))[9F87$$!3%******fJ^K'QF*$\"3Ig$R5z[
+[h#F87$$!31+++/#)[oPF*$\"35wD@X=H-MF87$$!34+++%>BJa$F*$\"3oe\\8?I_zZF8
+7$$!3.+++$=exJ$F*$\"3]=1-(pb0%eF87$$!3=+++L2$f$HF*$\"3%eQ\")RUqSH(F87$
+$!3!)*****pju<\\#F*$\"35AW?`h'Ro)F87$$!3!)*****HB@')4#F*$\"3WIY?m,L](*
+F87$$!3'******pjpsm\"F*$\"3AuP?!)Q)*z5F*7$$!3/+++74_c7F*$\"3wWaq^G@r6F
+*7$$!3]******zqZz#)F8$\"3i32!**Hv$f7F*7$$!3t*******>PQM%F8$\"3fR>j'Q=_
+L\"F*7$$!3c********4zr)*!#?$\"3:usu\"QnCT\"F*7$$\"3#)********zw5VF8$\"
+3mk4ku%o%)[\"F*7$$\"3a*******RQ#\\\")F8$\"3!\\EhPz*f^:F*7$$\"3(*******
+f\"*[H7F*$\"3Vce0'=<qh\"F*7$$\"3'********pvxl\"F*$\"3S\"Qn$*zH>o\"F*7$
+$\"37+++I0xw?F*$\"3Cv9*)ek4V<F*7$$\"3++++g&p@[#F*$\"3.8-c-8I+=F*7$$\"3
+(*******zgHKHF*$\"3q\"*=p$Rf<'=F*7$$\"3?+++qZvOLF*$\"3)*o$y,'3I:>F*7$$
+\"31+++]2goPF*$\"3%f(zP]G'3(>F*7$$\"3K++++u\"*fTF*$\"3<jJPk2*)>?F*7$$
+\"3m******\\)Hxe%F*$\"3O@NO4V;s?F*7$$\"3=+++I!o-*\\F*$\"3v.wn4J<?@F*7$
+$\"3N+++5k.6aF*$\"3q([4Yk?#p@F*7$$\"3J+++?WTAeF*$\"3;%[(*pOCh@#F*7$$\"
+3w******f!*3`iF*$\"31gkW)Q(=kAF*7$$\"3y******H*zym'F*$\"3AzCj7C`4BF*7$
+$\"3++++5N1#4(F*$\"3Y`@=M9+bBF*7$$\"3v******HYt7vF*$\"3'yEi72V#*R#F*7$
+$\"3M++++xG**yF*$\"3w?^!)y\"*=RCF*7$$\"3C******R6KU$)F*$\"3UtZjs?=%[#F
+*7$$\"3K+++IbdQ()F*$\"3Xp'*)**yWP_#F*7$$\"3G+++g`1h\"*F*$\"3%H*pr&*[Dl
+DF*7$$\"3k+++S?Wl&*F*$\"31)oi:wlVg#F*7$$\"#5\"\"!$\"3s!fk5J^dk#F*-%'CO
+LOURG6&%$RGBG$\"*++++\"!\")$F[xF[xFex-%+AXESLABELSG6$%\"xGQ!6\"-%%VIEW
+G6$;$!#5F[xFiw%(DEFAULTG" 1 2 0 1 10 0 2 9 1 4 2 1.000000 45.000000 
+45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "
+vzdalenost := sqrt((Xa - Xx)^2 + (Ya-Yx)^2):" }}}{EXCHG {PARA 0 "" 0 "
+" {TEXT -1 49 "po dosazen\355 kde X je po\350\341tek [0,0], a Ya = F(a
+). " }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 54 "vzdalenost := x->sqrt((x - 0)^2 + (sqrt(x/2 +2)-0)^2)
+;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%+vzdalenostGf*6#%\"xG6\"6$%)ope
+ratorG%&arrowGF(-%%sqrtG6#,&*$)9$\"\"#\"\"\"F4*$)-F-6#,&*&#F4F3F4F2F4F
+4F3F4F3F4F4F(F(F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "dvz:=D
+(vzdalenost);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$dvzGf*6#%\"xG6\"6$
+%)operatorG%&arrowGF(,$*&#\"\"\"\"\"#F/*&,&*&F0F/9$F/F/F.F/F/-%%sqrtG6
+#,&*$)F4F0F/F/*$)-F66#,&*&F.F/F4F/F/F0F/F0F/F/!\"\"F/F/F(F(F(" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "lokextr:=fsolve(dvz(x)=0);" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#>%(lokextrG$!+++++D!#5" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 56 "X-ova
+ sou\370ednice bodu, kter\375 je nejbl\355\236 k [0,0] je -1/4." }}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 22 "Ylokextr:=f3(lokextr);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%)Ylo
+kextrG$\"+%R1$p8!\"*" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 51 "Y-ova sou
+\370ednice bodu, kter\375 je nejbl\355\236 k [0,0] je " }{XPPEDIT 18 
+0 "1.369306394;" "6#$\"+%R1$p8!\"*" }{TEXT -1 1 "." }}{PARA 0 "" 0 "" 
+{TEXT -1 82 " ted pomoc\355 klasick\351ho vzorce | A X| = sqrt( (Xa -X
+x)^2 + (Ya-Yx)^2) ... dosad\355me " }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 51 "vzdalenost:=sqrt((-1/4 - 0)
+^2 + (1.369306394-0)^2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%+vzdalen
+ostG$\"+\"4T>R\"!\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+}}}{MARK "3 11 2 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 
+0 1 2 33 1 1 }

@@ -1,0 +1,18 @@
+c201.c: In function 'CopyFirst':
+c201.c:135:14: warning: assignment makes integer from pointer without a cast
+         *val = L->First; 
+              ^
+c201.c: In function 'DeleteFirst':
+c201.c:149:9: warning: statement with no effect [-Wunused-value]
+         L->Act == NULL;
+         ^
+c201.c: In function 'CopyFirst':
+c201.c:135:14: warning: assignment makes integer from pointer without a cast
+         *val = L->First; 
+              ^
+c201.c: In function 'DeleteFirst':
+c201.c:149:9: warning: statement with no effect [-Wunused-value]
+         L->Act == NULL;
+         ^
+	OK
+

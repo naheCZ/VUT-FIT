@@ -1,0 +1,36 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[czech]{babel} 
+\usepackage[left=2cm, text={17cm, 24cm}, top=3cm]{geometry} 
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\providecommand{\uv} [1] {\quotedblbase #1\textquotedblleft}
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+{\Huge \textsc{Vysoké učení technické v~Brně}\\ \huge \textsc{Fakulta informačních technologií\\}}
+\vspace{\stretch{0.382}}
+{\LARGE Typografie a publikování\,--\,4. projekt\\ \Huge Bibliografické citace}
+\vspace{\stretch{0.618}}
+\end{center}
+{\Large \today \hfill Roman Nahálka}
+\end{titlepage}
+
+\section{Co to je \LaTeX}
+Pro popsání toho, co to ten {\LaTeX} vlastně je, by jsem rád použil definici, která je dostupná na Wikipedii \cite{Wikipedia}.
+\begin{quote}
+\LaTeX(vyslovuje se [latech], někdy podle anglické výslovnosti [leitek] či [la:tek] nebo nesprávně [lateks] či ['leiteks], formátuje takto \LaTeX), je balík maker programu \TeX, který umožňuje autorům textů sázet a~tisknout svá díla ve velmi vysoké typografické kvalitě, přičemž autor používá profesionály předdefinovaných vzhledů dokumentu. {\LaTeX} byl původně napsán Lesliem Lamportem. {\LaTeX} užívá programu {\TeX} jako sázecího stroje.
+\end{quote}
+
+\section{Jak začít s \LaTeX em}
+Pokud chcete psát dokumentace na profesionální úrovni, je určitě {\LaTeX} správná volba. Ovšem začít ho používat není jen tak a~začátky s~ním mohou být velice složité. Určení není od věci si pro začátek pořídit nějakou literaturu. Pokud preferujete česky psanou literaturu, doporučil bych knihu {\LaTeX} pro začátečníky od Jiřího Rybičky \cite{Rybicka}. Jestli vám není cizí anglicky psaná literatura, můžete najít několik knížek v~\LaTeX u v~anglickém jazyce. Jedna z~takových knížek je například Guide to {\LaTeX} od Helmuta Kopky \cite{Helmut}. Nicméně způsobu, jak začít s~\LaTeX em je samozřejmě více, než čtení literatury o něm. Na internetu najdeme několik tutoriálů pro práci s~\LaTeX em a~to i~v~češtině. Jeden z~takových tutoriálů je dostupný na stránce root.cz \cite{Root}. O~\LaTeX u či \TeX u je také napsáno mnoho článku v~časopisech \cite{AUUGN} \cite{PCMag}.
+
+\section{K čemu je \LaTeX dobrý}
+Co to {\LaTeX} je, že se používá pro psaní dokumentů a~jak s~ním začít jsme si už řekli. Teď by bylo dobré si říci, co vlastně všechno ten {\LaTeX} umí. Jeden z~důvodů, proč vlastně {\LaTeX} vznikl byla sazba matematických formulí \cite{Matematika}. Další problematikou v \LaTeX u je problematika sazby odborného textu \cite{Odborny}. Pokud se chcete o \LaTeX u dozvědět co nejvíce, doporučoval bych vám stránky Davida Martínka \LaTeX ové speciality \cite{Speciality}. {\LaTeX} nám hlavně umožňuje psát typograficky lepší dokumenty. Typografie je problematika sama o~sobě, které se věnuje například periodikum pojmenované Typografia \cite{Typo}, jehož vydávání bylo bohužel před dvěma lety pozastaveno.
+
+\newpage
+\bibliographystyle{czechiso}
+\bibliography{proj4}
+\end{document}  

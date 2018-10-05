@@ -1,0 +1,8 @@
+class Main
+{
+  static int a = 66;
+	static void run()
+	{
+	  int b = 99;
+	}
+}

@@ -1,0 +1,119 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[czech]{babel} 
+\usepackage[left=2cm, text={17cm, 24cm}, top=3cm]{geometry} 
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{indentfirst}
+\providecommand{\uv} [1] {\quotedblbase #1\textquotedblleft}
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+{\Huge \textsc{Vysoké učení technické v~Brně}\\ \huge \textsc{Fakulta informačních technologií\\}}
+\vspace{\stretch{0.382}}
+{\LARGE Síťové aplikace a správa sítí\,--\,Projekt\\ \Huge POP3 Server}
+\vspace{\stretch{0.618}}
+\end{center}
+{\Large \today \hfill Roman Nahálka}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Úvod}
+Tato dokumentace vznikla k~projektu do předmětu Síťové aplikace a~správa sítí (ISA). Cílem projektu je vytvořit POP3 \cite{POP3} Server pro čtení e-mailů. POP3 Server pracuje s~e-maily uloženými ve struktuře Maildir\cite{Maildir}. Funkcionalita POP3 serveru je popsána v~RFC 1939.
+
+\section{Důležité pojmy}
+V~této části dokumentu je popsán základní princip aplikace a~popis důležitých pojmů, které se budou v~dokumentaci déle vyskytovat. Bude zde popsáno, co to vlastně POP3 je, adresářovou strukturu, ve které budeme mít uloženy e-maily, a~formát e-mailů. 
+
+\subsection{POP3}
+POP je zkratka pro \texttt{Post Office Protocol}. Jedná se o~internetový protokol, určený pro čtení e-mailových zpráv ze vzdáleného serveru. Dnes se používá jeho třetí verze, nazvaná právě POP3.
+
+Protokol je popsán v RFC 1939. Tento popis vznikl v~roce 1996. Protokol využívá TCP/IP spojení. Standartně probíhá komunikace na TCP portu 110 a komunikace probíhá na principu klient/server.
+
+
+\subsection{Maildir}
+Maildir je formát využívaný pro uložení e-mailových zpráv na serveru. Každá e-mailová zpráva je zde uložena jako samostatný soubor s~unikátním názvem. Jedná se vlastně o~složku, obsahující tři podsložky, \texttt{cur}, \texttt{new} a~\texttt{tmp}. 
+
+\subsection{IMF}
+V našem případě budou e-maily uloženy ve formátu IMF \cite{IMF}. IMF je zkratka pro \texttt{Internet Message Format}. Jedná se o~formát, přes který jsou posílaný textové zprávy přes internet. Uložený e-mail se skládá z~hlavičky, obsahující různé informace o~e-mailu, a~z~těla, tedy ze samotné zprávy. Tento formát je popsán v RFC 5322. Tento popis vznikl v~roce 2008.
+
+\section{Implementace}
+Program je implementován v~jazyce C/C++. Program je navržen objektově. Aplikace je vytvořena pro operační systém Linux a~byla testovaná na virtuální stroji s~Ubuntu 16.04 (64 bit) a~na školním serveru \texttt{merlin.fir.vutbr.cz}. Přenositelnost na jiný operační systém nebyla testovaná a~není tak zaručena.
+
+\subsection{Zpracování argumentů}
+První věc, co program musí po spuštění vykonat je zpracování argumentů příkazové řádky. Pro argumenty jsem navrhl objekt s~názvem \texttt{Arguments}. Samotné zpracování pak probíhá v~metodě \texttt{parseArguments()}. V~této funkce se správnost argumentů ověřuje pomocí funkce \texttt{getopt()}, která nám umožní zpracovávat argumenty v libovolném pořadí. Zpracované argumenty se ukládají do atributů třídy.
+
+\subsection{Kontrola správnosti argumentů}
+Po zpracování argumentů je důležitá jejich kontrola. Tato kontrola probíhá pouze v~případe, že nebyla vyžádaná nápověda či reset serveru bez dodatečných argumentů. O tuto kontrolu se stará metoda \texttt{checkValidity()}, která volá metody \texttt{checkAuthFile()} a~\texttt{checkPort()}, které zkontrolují správnost zadání portu a~správnost autentizačního souboru se jménem a~heslem uživatele.
+
+\subsection{Navázání spojení}
+Pokud byli všechny argumenty správně zadaný, nastal čas vytvořit spojení. Pro server jsem navrhl objekt s~názvem \texttt{Server}. Vytvoření a~navázání spojení s~klientem probíhá v~metodě \texttt{connection()}. V~této metodě se vytvoří a~nastaví socket, obsadí se uživatelem zadaný port, a~čeká se na připojení klienta. Po úspěšném navázání spojení se vytvoří nové vlákno, které začíná ve stavu autentizace klienta a~provádí ji metoda \texttt{authorization()}.
+
+\subsection{Stav autentizace}
+Po navázání spojení se server bude nacházet ve stavu autentizace. Způsob autentizace se bude lišit v~závislosti na zadaném parametru \texttt{-c}, který určuje, zda se jedná o~šifrovanou nebo nešifrovanou autentizaci. Po úspěšné autentizaci se server pokusí uzamknout pro klienta \texttt{Maildir} a~klient pokračuje do stavu transakce zavoláním metody \texttt{transaction()}. Pokud se uzamčení nepovede, uživatel se vrátí do stavu autentizace. 
+
+\subsubsection{Šifrovaná autentizace}
+Šifrovaná autentizace probíhá pokud nebyl zadán přepínač \texttt{-c}. V~tomto případě se uživatel připojuje pomocí příkazu \texttt{APOP}. Tento příkaz má dva argumenty, prvním je uživatelské heslo a~druhým je heslo zašifrované metodou \texttt{md5} v~kombinaci s~časovým razítkem, které uživatel obdrží při navázání spojení či po neúspěšném pokusu o přihlášení.
+
+Pro algoritmus \texttt{md5} jsem použil zdrojový kód dostupný na stránkách zedwood \cite{zed} .
+
+\subsubsection{Nešifrovaná autentizace}
+Pokud byl zadán přepínač \texttt{-c}, uživatel se přihlašuje k~serveru pomocí příkazů \texttt{USER} a~\texttt{PASS}. Uživatel nejdříve zadá příkaz \texttt{USER} s~argumentem obsahující uživatelské jméno. Poté stejným způsobem pomocí příkazu \texttt{PASS} zadá heslo. Pokud byl některý z~údajů zadán chybně, server odešle odpověď \texttt{-ERR} a~bude znovu čekat na pokus o~přihlášení.
+
+\subsection{Stav transakce}
+Po úspěšně autentizaci klienta se server přesune do stavu transakce. Ihned po přesunu do tohoto stavu, server přesune všechny soubory z~podsložky \texttt{new} do podsložky \texttt{cur} zavoláním metody \texttt{newToCur()}. V~tomto stavu server od klienta očekává zadávání příkazů. Povolené příkazy na serveru jsou příkazy \texttt{LIST}, \texttt{STAT}, \texttt{RETR}, \texttt{DELE}, \texttt{RSET}, \texttt{NOOP}, \texttt{UIDL} a~\texttt{QUIT}. Velikost písmen se u~příkazů neřeší a~příkaz tak může být zadán velkými i~malými písmeny, popř. jejich kombinací.
+
+Klient zasílá serveru příkazy až do doby, kdy mu pošle příkaz \texttt{QUIT}, kterým se ukončuje spojení klienta se serverem. Po zadání tohoto příkazu se server přesune do stavu update zavoláním metody \texttt{update()}.
+
+\subsection{Stav update}
+Po skončení práce klienta se serverem se server přesune do stavu update. V tomto stavu server smaže všechny e-maily označené ke smazání pomocí příkazu \texttt{DELE}. Poté, co server smaže všechny označené e-maily, informuje klienta a~ukončí s~ním spojení. Následně se server vrátí zpět do stavu autentizace.
+
+\subsection{Reset}
+Pokud při spuštění serveru bude zadán přepínač \texttt{-r}, znamená to, že máme provést restart serveru, jakoby náš server nebyl nikdy před tím spuštěn. V~tomto případě server přesune všechny soubory ze složky \texttt{cur} zpět do složky \texttt{new} a~smaže všechny vytvořené pomocné soubory. 
+
+\section{Zajímavé části implementace}
+V~této sekci popíši některé zajímavější části implementace aplikace.
+
+\subsection{Mazání zpráv}
+Jedna ze zajímavější častí POP3 serveru je mazání zpráv. Server nemaže soubory s~e-maily okamžitě, ale až ve stavu update. Pokud se server při spojení s~klientem z~nějakého důvodu do stavu update nedostane, soubory nebudou smazány.
+
+Zprávy uložené ke smazání mám tedy uloženy ve \texttt{vectoru}, který je atributem třídy \texttt{Server} a~jeho název je \texttt{delMark}. Do tohoto \texttt{vectoru} ukládám čísla zpráv, které se mají smazat. Jedná se tedy o~\texttt{vector}, do kterého ukládám datový typ \texttt{int}.
+
+\subsection{Pomocné soubory}
+Pro usnadnění práce serveru vytvářím dva pomocné soubory. V~jednom si uchovávám důležité informace o~jednotlivých e-mailech a~v~druhém cestu k~Maildiru. První soubor mám pojmenovaný \texttt{pom.pop} a~je v~něm uložený název souboru, velikost v~bajtech, kterou je nutné přičíst k jeho velikosti, aby velikost odpovídala řádkování \texttt{CRLF}, a~posledním uloženým údajem je jeho unikátní identifikační číslo pro příkaz \texttt{UIDL}. Tyto informace jsou uloženy z~důvodu, aby server nemusel soubory dokola otevírat při každém spuštění. Informace jsou tedy do souboru uloženy při přesunu souborů. Druhý soubor jsem pojmenoval \texttt{dir.pop} a je v něm uložená cesta k~Maildiru, pro případ, že uživatel bude chtít provést reset serveru bez specifikace cesty k~Maildiru.
+
+\subsection{Unikátní identifikační číslo}
+Aby měl uživatel přehled o~jednotlivých e-mailech, je každé zprávě přiřazeno unikátní identifikační číslo. Já jsem se rozhodl toto číslo vytvářet pomocí funkce \texttt{std::hash}. Do této funkce pošlu název souboru, ze kterého mi funkce vytvoří identifikační číslo, které bude pro každý soubor unikátní. Klient toto číslo zjistí pomocí příkazu \texttt{UIDL}. Identifikační číslo je každému souboru přiřazeno při přesunu souborů a~je zaznamenáno v~pomocném souboru.
+
+\section{Použití aplikace}
+Program se spouští následujícím způsobem:\\
+\texttt{./popser [-h] [-a PATH] [-c] [-p PORT] [-d PATH] [-r]}, kde:
+\begin{itemize}
+\item h -- Vypíše nápovědu
+\item a -- Cesta k autentizačnímu souboru
+\item c -- Povolení nešifrované autentizační metody
+\item p -- Číslo portu, na kterém bude server běžet
+\item d -- Cesta do složky Maildir
+\item r -- Reset serveru
+\end{itemize}
+
+
+Server může běžet ve 3 režimech běhu a~to v~následujících:
+\begin{itemize}
+\item Výpis nápovědy -- Zadaný parametr \texttt{-h}
+\item Pouze reset -- Zadaný pouze parametr \texttt{-r}
+\item Běžný režim -- Zadané parametry \texttt{-a}, \texttt{-p} a~\texttt{-d} a~volitelné parametry \texttt{-c} a~\texttt{-r}
+\end{itemize}
+
+\section{Závěr}
+Aplikace spustí POP3 server a~multi-vláknově obsluhuje klienty. Funkčnost aplikace byla řádně ověřena na virtuální stroji s~operačním systémem Ubuntu 16.04 a~na školním serveru \texttt{merlin.fit.vutbr.cz}. Program je překládán překladačem \texttt{g++}. Pro překlad aplikace je přiložen soubor \texttt{Makefile}.
+
+
+\newpage
+\bibliographystyle{czechiso}
+\bibliography{dokumentace}
+\end{document}  

@@ -1,0 +1,18 @@
+Program: POP3 Server
+Autor: Roman Nahálka, xnahal01@stud.fit.vutbr.cz
+Datum vytvoření: 20.11.2017
+
+Popis:	Aplikace plní úlohu POP3 Serveru. Na server se budou připojovat klienti, kteří si budou ze serveru stahovat elektronickou poštu uloženou ve formátě IMF v adresářové struktuře Maildir.
+
+
+Použití: ./popser [-h] [-a PATH] [-c] [-p PORT] [-d PATH] [-r]
+
+Příklad spuštění: ./popser -a auth.txt -c -p 6669 -d ./Maildir
+
+Nápověda: ./popser -h
+
+Seznam souborů: Makefile, README, manual.pdf, main.cpp, arguments.cpp, arguments.h, error.cpp, error.h, md5.cpp, md5.h, server.cpp, server.h, user.cpp, user.h
+
+Všechny soubory zabaleny v archivu xnahal01.tar
+
+Není implementováno žádné rozšíření.

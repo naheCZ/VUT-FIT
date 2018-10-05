@@ -1,0 +1,37 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=2cm, text={17cm, 24cm}, top=2.5cm]{geometry}
+\usepackage[czech]{babel}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\providecommand{\uv} [1] {\quotedblbase #1\textquotedblleft}
+		
+\begin{document}
+\noindent
+Dokumentace úlohy: JSN: JSON2XML v~PHP5 do IPP 2016/2017\\
+Jméno a příjmení: Roman Nahálka\\
+Login: xnahal01
+
+\section{Zadání}
+Úkolem bylo vytvořit skript v~jazyce PHP5 pro konverzi JSON formátu do formátu XML. Každému prvku z~JSON odpovídá jeden párový element.
+
+\section{Implementace}
+\subsection{Zpracování argumentů}
+Zpracování argumentů zajišťuje funkce \texttt{parseArguments()}, která je volána jako první po spuštění skriptu. Argumenty jsou zpracovávány pomocí metody \texttt{getopt()}. Argumenty jsou rozděleny na tzv. dlouhé a krátké argumenty příkazové řádky. Funkce také ošetřuje chybové stavy, které mohou nastat.
+
+\subsection{Načtení vstupního souboru}
+Vstupní soubor, který má skript zpracovávat, se zadává pomocí argumentu \texttt{--input}. Pokud není tento argument zadán, zpracovává se \texttt{STDIN}. Vstupní soubor ve formátu JSON je zpracován pomocí metody \texttt{json{\_}decode()}.
+
+\subsection{Výstupní XML soubor}
+Cílový výstupní soubor se zadává pomocí argumentu \texttt{--output}. Pokud není tento argument zadán, je výsledek posílán na \texttt{STDOUT}. Pro zapisování do XML souboru je použita třída \texttt{XMLWriter}.
+
+\subsection{Převod souboru}
+Samotný převod formátu JSON do XML provádí funkce \texttt{parseFile()}. Funkce postupně zpracovává objekty a pole. V~případě, že je hodnota pole, provádí se rekurzivní zpracování.
+
+\subsection{Chybové stavy}
+V případě, že skript narazí na chyboví stav, okamžitě zavolá funkci \texttt{error()}, která na \texttt{STDERR} vypíše přislušnou chybovou hlášku a ukončení program s odpovídajícím návratovým kódem.
+
+\section{Závěr}
+Skript byl otestován pomocí základní sady testů na operačním systému \texttt{CentOS 6.5 64bit}, umístěný na školním serveru \texttt{merlin.fit.vutbr.cz}. Výstupní soubory byli porovnány pomocí programu \texttt{JExamXML}.
+                                                                                                                                                                                    
+\end{document}

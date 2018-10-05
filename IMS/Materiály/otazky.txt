@@ -1,0 +1,113 @@
+#gen
+generátor, f(x), F(x), F^-1(X), p na konkretni cislo a gen 2
+kongruentny generator, matematicky, v C napisat s rovnomernym rozlozenim v intervale 0-1, f(x), F(x), F^-1(x), a poslednu v C, pravdepodobnost, ze sa vygeneruje konkretne cislo
+kongruentní generator vzorec + double Random(); zakreslit f(x), F(x), F^-1(x); pravděpodobnost, že se vygeneruje konkretní číslo; double gen2() inverzní transformací
+kongruentní generátor, matematicky, napsat ho v C, pak udělat inverzní transformací f(x) = 3/4 pro x € <0,1) a f(x) = 1/4 pro <1,0) a napsat takový generátor, nakreslit průběhy f(x), F(x), F^-1(x), vypočítat pravděpodobnost, že se vygeneruje 1,5
+Kongruetní generátor - napsat matematicky. Pak vytvořit Random. Co je to perioda a jak by jsme ji experimentálně dokázali. Pomocí Random vytvořit gen1() vylučovací metodou a gen2() inverzní transformací pro f(x) = 1/4 pro x = <0,1) a f(x) = 3/4 pro x = <1,2) jinak 0.
+Napsat kongruentní generátor a pak transformace na rozložení dané hustotou f(x) následovně:
+	pro <0,1) f(x) = 1/3 a pro <1,2) f(x) = 2/3.
+	Napište transformaci v C inverzní i vylučovací metodou.
+
+#DD
+next event D/D/2, gen 1, obsluha 3s, FIFO, 6 poslednich udalosti pred t=9,5
+D/D/2 se společnou LIFO frontou, příchody po 1s, obsluha po 3s - napsat algoritmus next-event, prvních 12 provedených událostí, obsah kalendáře a fronty v t=7,5s
+next event D/D/3, FIFO, 1s, 5s, t=9,5s
+D/D/3 s FIFO frontou v čase t=9,5: vypsat kalendář, fronty, petriho síť, vypsat události v čase 5
+next event, D/D/3 s LIFO frontou, generování 1s, obsluha 4s;
+next event, D/D/3, FIFO, 1s, 4s, t=9,5s, posledních 6 událostí před t, kalendář v t, fronta v t
+D/D/3, T=10.5, prichody 1s, obsluha 5s
+Next-event algoritmus. D/D/2 LIFO, prichod za 1 s, 5 s obsluha, od 0 do 99, prvni pozadavek v case 0.
+D/D/3 s neomezenou LIFO frontou. Příchody požadavků začínají v čase 0 s intervalem 1s, doba obsluhy=5
+	napsat seznam událostí pro čas 5s
+	napsat obsah kalendáře pro čas 10,5s
+	stav fronty v čase 10,5
+	napsat pseudokód algoritmu next-event
+	nakreslit petriho síť v čase 10,5
+D/D/3, časový průběh, obsah kalendáře v čase 7.5s, proběhlé události, stav fronty (jedna sdílená), nakreslit PS, algoritmus next-event
+
+#MM
+dva sériově zapojené M/M/1, nakreslit jejich schéma a formálně je definovat domocí S=(U,R)
+M/M/2 s frontou délky jedna
+	Doba mezi příchody 15s
+	Intenzita obsluhy 3/min
+	Průměrná délka fronty
+M/M/2 s frontou o kapacitě 1 - průměrná délka fronty
+M/M/3 bez fronty, výpočet pravděpodobnosti, že bude alespoň jedno zařízení volné
+M/M/3 bez front, vypocitat p1
+M/M/3 bez front, vypočítat obecně a pak pravděpodobnost, že prvek odejde neobsloužen
+Markovovské procesy M/M/3, bez fronty, mi=2, lambda=6, spočítat pravděpodobnost že procesy jsou zahazovány z fronty
+	Nakreslit casovy diagram.
+	t=9.5s Obsah fronty, Kalendare, zarizezni, nakreslit petri
+	Napsat udalosti v case 5
+M/M/3 bez fronty, Pravdepodobnost ze aspon jedna je volna.
+	vysledek: 1- p3 = 15/19
+M/M/3 bez fronty. alfa=10s, mikro=2/min
+	napsat rovnice pro ustálený stav
+	vyřešit rovnice
+	spočítat pravděpodobnost že příchozí požadavek odejde neobsloužen
+M/M/3 a ta pravděpodobnost byla, že jestli bude alespoň jedno zařízení volné při příchodu požadavku
+
+
+#runge kurva
+Rk2 - rk_step, dynamic, simulation_run
+RK2, y'''+3y'-5=0 alebo tak nejaku uz neviem
+RK2: včetně funkcí Dynamic a Run, pro y"+3y'-2=0 (nebo tak nějak)
+RK_step, napsat kód k daným rovnicím (k1 = f(t, y(t)), k2 = f(t+h/2, y(t)+k1/2), k3 = f(t+h, y(t) + k2), y(t+h) = y(t) + h(k1 +3*k2 +1/6k3), nebo nějak tak)
+Napište v C funkci RK_step, která dela krok numerické metody (dále byly zadané vzorce té metody, nebyla to RK2 ani RK4). Potom napište Dynamic pro y''=y+4. Poté napište kód pro spojitou simulaci řízenou RK_step.
+
+#euler
+Eulerova metoda - zadány dvě rovnice jež se mají vyřešit metodou snižování řádu derivaci, nakreslit schéma, vyznačit případné algebraické smyčky, napsat v C program řešící soustavu Eulerovou metodou a nakonec vyplnit tabulku ručním řešením Eulerovou metodou
+
+#fuzzy pod nosom
+fuzzy logika: nakreslit schema, co je fuzzifikace, vymyslet nějaký příklad (Nevím přesně, nestihl jsem)
+Co je Fuzzyfikace, jak je definováno AND ve fuzzy logice, nakreslit schéma fuzzy regulátoru
+
+#pojmy
+pojmy reálný čas, modelový čas, strojový čas
+Jaký čas používají Markovského procesy
+Spojita simulace, proc jsou bloky usporadani za sebou, algoritmus na to
+co je to algebraicka smycka + jak se resi
+porovnání jednokrokových a vícekrokových metod z pohledu nároků na výpočet, udělat nějaké grafy závislosti atd.
+Kam doplníte čekání v next-event pokud chcete provádět real-time simulaci
+nějaká lehká teorie ohledně toho co to je modelový čas, strojový čas, reálný čas, a potom otázka co by musel splňovat next-event algoritmus a kam byste zaŕadili čekání pokud měl pracovat Real-time
+
+#celular
+Celularni automat - popsat, zakladni prvky, priklady pouziti, klasifikace (podle wolframa)
+Definuje Celulárni automat podle Wolframa. Poté napište definici CA Rule 30 (Pravidlo 30). Dále spočítejte kolik možných kombinací pravidel má jednorozměrný CA s okolím ooBoo (tedy okolí jsou 2 buňky vlevo a vpravo) a s dvěma stavy {0, 1}.
+byla o celulárním automatu, obecně definovat, pak určit, do kolika stavů se může dostat buňka, když je nějak definovaný okolí a její stavy.. a vypsat všechny potřebné komponenty CA 
+
+#simlib
+v simlibe napisat prioritu obsluhy a kedy sa v praxi pouziva
+napsat pseudokódem (za použití SIMLIB) chování dvou procesů: jeden, který při zabírání "vyhodí" obsluhovaný proces (tj. priorita obsluhy), a druhý, který bude jen předbíhat ve frontě (tj. priorita procesu). Navíc napsat podmínky, za kterých to bude fungovat, příklady použití apod. U priority obsluhy ještě co se bude dít s frontami.
+
+#hovno
+zadány dvě rovnice jež se mají vyřešit metodou snižování řádu derivaci, nakreslit schéma, vyznačit případné algebraické smyčky, napsat v C program řešící soustavu Eulerovou metodou a nakonec vyplnit tabulku ručním řešením Eulerovou metodou
+Do grafu hustoty pravděpodobnostní funkce dokreslit distributivní funkci a vyznačit její významné body, do druhého grafu nakreslit odpovídající inverzní distributivní funkci. Za předpokladu že už máme v C inverzní distributivní funkci double InvF(double x) napsat v C generátor tohoto rozložení (zahrnovalo kongruentní generátor, který by se měl používat jako vstup InvF(x)).
+Navíc tam bylo určitě ještě napsat obecný (matematický) vzorec kongruentního generátoru a slovně popsat, jak se používá ta inverzní distribuční funkce transformaci na určité rozložení.
+Do grafu hustoty pravděpodobnostní funkce dokreslit distributivní funkci a vyznačit její významné body, do druhého grafu nakreslit odpovídající inverzní distributivní funkci. Za předpokladu že už máme v C inverzní distributivní funkci double InvF(double x) napsat v C generátor tohoto rozložení (zahrnovalo kongruentní generátor, který by se měl používat jako vstup InvF(x))
+Zvolte si vlastní funkci hustoty f(x) (nesmí být normální rozložení)
+	napište v ISO C kód kongruentního generátoru který generuje čísla v rozsahu <0,1)
+	nakreslete obrázek a zakreslete do něj: f(x) F(x) Fˆ-1(x)
+	napište funkci která bude generovat číslo podle daného rozložení, k dispozici máte funkci double f(x)
+	napište funkci která bude generovat číslo podle daného rozložení za pomocí metody inverzní transformace
+Napisat random rovnice. Random() v C, zvolit funkce hustoty f(x), nakreslit graf + distribucny + inv distr.
+- napsat kod tak ze mame jenom funkci double f(x) - funkce hustoty
+- napsat kod tak ze mame jenom funkci invF(x) - inv distrib
+    double Random(){
+    	ix = (ix*A+B) % M;
+    	return ix / M;
+    }
+    
+    double myrand(){
+    	double x,y;
+    	while(1){
+    		x=random() (*neco ked si potreboval na 0-2 tak *2);
+    		y=random() (*neco ked si potreboval na 0-2 tak *2);
+    		if( y<=f(x)) return x;
+		}
+    }
+
+    double myrand2(){
+    	double x = random();
+    	return invF(x);
+    }

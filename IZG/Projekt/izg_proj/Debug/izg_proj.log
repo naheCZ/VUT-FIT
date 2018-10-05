@@ -1,0 +1,29 @@
+﻿Build started 26.04.2016 23:52:33.
+     1>Project "C:\Users\Roman\Disk Google\IZG\Projekt\izg_proj\izg_proj.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\izg_proj.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"..\SDL-1.2.15\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt student.c
+         student.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\izg_proj.exe" /NOLOGO /LIBPATH:"..\SDL-1.2.15\lib\x86" SDL.lib SDLmain.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\izg_proj.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\izg_proj.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\izg_proj.lib" /MACHINE:X86 Debug\bmp.obj
+         Debug\color.obj
+         Debug\main.obj
+         Debug\model.obj
+         Debug\render.obj
+         Debug\student.obj
+         Debug\transform.obj
+         Debug\vector.obj
+         LINK : .\izg_proj.exe not found or not built by the last incremental link; performing full link
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+         izg_proj.vcxproj -> C:\Users\Roman\Disk Google\IZG\Projekt\izg_proj\.\izg_proj.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\izg_proj.exe;#1" /manifest Debug\izg_proj.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\izg_proj.unsuccessfulbuild".
+         Touching "Debug\izg_proj.lastbuildstate".
+     1>Done Building Project "C:\Users\Roman\Disk Google\IZG\Projekt\izg_proj\izg_proj.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.51

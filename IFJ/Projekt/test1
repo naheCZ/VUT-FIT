@@ -1,0 +1,23 @@
+class Main
+{
+	static void run()
+	{
+		int a = 5;
+	 	int b = 20;
+		b = 6;
+		a = 22;
+		//b = 10 + a;
+		//int c = b + a * 7;
+		//int d = 22 + 66 - c - b != (a > 7);
+		//int kva = a + b + c + d;
+		//a = 17 + a;
+		//kva = kva - 20;
+		//int b = 7 + b;
+		//funkce(a, "abc");
+		//int c = fce(a, 7);
+
+
+		//int b = ((5) + (3));
+		//int c = 100 + (17) - 3 * 6 / 2 + 2 + (8 > 6) + (8 < 6 * 0) != 7 + (3) >= 7 - (((6 <= 11))); //OK
+	}
+}

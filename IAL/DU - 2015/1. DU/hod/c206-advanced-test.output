@@ -1,0 +1,176 @@
+Double Linked List - Advanced Tests
+===================================
+
+[TEST01]
+List initialization
+~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST02]
+Calling DLCopyFirst for empty list should cause en error.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*ERROR* The program has performed an illegal operation.
+Function DLCopyFirst has called function DLError.
+
+[TEST03]
+Calling DLCopyLast for empty list should cause en error.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*ERROR* The program has performed an illegal operation.
+Function DLCopyLast has called function DLError.
+
+[TEST04]
+Calling DLCopy for empty list should cause en error.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*ERROR* The program has performed an illegal operation.
+Function DLCopy has called function DLError.
+
+[TEST05]
+Calling DLFirst for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST06]
+Calling DLLast for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST07]
+Calling DLDeleteFirst for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST08]
+Calling DLDeleteLast for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST09]
+Calling DLPostDelete for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST10]
+Calling DLPreDelete for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST11]
+Calling DLPostInsert for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST12]
+Calling DLPreInsert for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST13]
+Calling DLActualize for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST14]
+Calling DLSucc for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST15]
+Calling DLPred for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST16]
+Function DLActive for empty list should return FALSE.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Return value of function DLActive is FALSE.
+
+[TEST17]
+Calling DLDisposeList for empty list should do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+-----------------
+
+[TEST18]
+3x DLInsertFirst
+~~~~~~~~~~~~~~~~
+-----------------
+ 	4
+-----------------
+-----------------
+ 	5
+ 	4
+-----------------
+-----------------
+ 	6
+ 	5
+ 	4
+-----------------
+
+[TEST19]
+The list should not be active now.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Return value of function DLActive is FALSE.
+
+[TEST20]
+We start at the begin of the list and go to the end.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+ 	6	 <= activity 
+ 	5
+ 	4
+-----------------
+Return value of function DLActive is TRUE.
+-----------------
+ 	6
+ 	5	 <= activity 
+ 	4
+-----------------
+Return value of function DLActive is TRUE.
+-----------------
+ 	6
+ 	5
+ 	4	 <= activity 
+-----------------
+Return value of function DLActive is TRUE.
+-----------------
+ 	6
+ 	5
+ 	4
+-----------------
+Return value of function DLActive is FALSE.
+
+[TEST21]
+We start at the end of the list and go to its begin.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
+ 	6
+ 	5
+ 	4	 <= activity 
+-----------------
+Return value of function DLActive is TRUE.
+-----------------
+ 	6
+ 	5	 <= activity 
+ 	4
+-----------------
+Return value of function DLActive is TRUE.
+-----------------
+ 	6	 <= activity 
+ 	5
+ 	4
+-----------------
+Return value of function DLActive is TRUE.
+-----------------
+ 	

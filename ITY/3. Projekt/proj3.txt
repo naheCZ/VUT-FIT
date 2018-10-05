@@ -1,0 +1,53 @@
+Základní informace o dokumentu
+------------------------------
+rozmìry stránky: A4
+rozmìry textové oblasti: 17x24cm
+mezera vlevo: 2cm
+mezera nahoøe: 3cm
+font: times 11pt
+
+Pøeklad
+---------------
+Pro pøeklad použijte makefile a pøíkazy latex, dvips a ps2pdf s parametrem -sPAPERSIZE=a4.
+U posledního obrázku není nutné dodržet úplnì pøesnì souøadnice zaèátkù a koncù èar. 
+Pro zjištìní pøibližných souøadnic použijte pøiložený obrázek.
+
+Text k vysázení
+---------------
+
+Vysoké uèení technické v Brnì
+Fakulta informaèních technologií
+
+Typografie a publikování - 3. projekt
+Tabulky a obrázky
+
+Pro sázení tabulek mùžeme použít buï prostøedí tabbing nebo prostøedí tabular.
+Prostøedí tabbing
+Pøi použití tabbing vypadá tabulka následovnì:
+
+Toto prostøedí se dá také použít pro sázení algoritmù, ovšem vhodnìjší je použít 
+prostøedí algorithm nebo algorithm2e (viz sekce 3).
+
+Další možností, jak vytvoøit tabulku, je použít prostøedí tabular. Tabulky pak 
+budou vypadat takto:
+
+Pokud budeme chtít vysázet algoritmus, mùžeme použít prostøedí algorithm nebo algorithm2e.
+Pøíklad použití prostøedí algorithm2e viz Algoritmus 1.
+
+Kdyby byl problem s cline, zkuste se podívat tøeba sem: 
+http://www.abclinuxu.cz/tex/poradna/show/325037
+
+Pro nápovìdu, jak zacházet s prostøedím algorithm, mùžeme zkusit tuhle stránku:
+http://ftp.cstug.cz/pub/tex/CTAN/macros/latex/contrib/algorithms/algorithms.pdf.
+Pro algorithm2e zase tuhle:
+http://ftp.cstug.cz/pub/tex/CTAN/macros/latex/contrib/algorithm2e/algorithm2e.pdf.
+
+Do našich èlánkù mùžeme samozøejmì vkládat obrázky. Pokud je obrázkem fotografie,
+mùžeme klidnì použít bitmapový soubor. Pokud by to ale mìlo být nìjaké schéma nebo
+nìco podobného, je dobrým zvykem takovýto obrázek vytvoøit vektorovì.
+
+Odkazy (nejen ty) na obrázky 1, 2 a 3, na  
+tabulky 1 a 2 a také na algoritmus 1 jsou udìlány pomocí 
+køížových odkazù. Pak je ovšem potøeba zdrojový soubor pøeložit dvakrát.
+Vektorové obrázky lze vytvoøit i pøímo v LATEXu, napøíklad pomocí prostøedí 
+picture. Všechny rozmìry jsou uvádìny v mm.

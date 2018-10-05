@@ -1,0 +1,15 @@
+# velmi jednoducha minimalizace
+(
+{p, q, r},
+{'', '1'},
+{
+p '' -> q,
+p '1' -> p,
+q '' -> r,
+q '1' -> q,
+r '' -> q,
+r '1' -> p
+},
+p,
+{q}
+)

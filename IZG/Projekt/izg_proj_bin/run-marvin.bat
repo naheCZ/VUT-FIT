@@ -1,0 +1,1 @@
+izg_proj models/marvin.tri models/marvin.bmp

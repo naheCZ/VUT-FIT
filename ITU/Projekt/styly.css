@@ -1,0 +1,164 @@
+body
+{
+  background: url('img/pozadi1.png');
+  margin: 0px;
+  font-family: Verdana;
+  font-size: 15px;
+  min-width: 960px;
+}
+
+header
+{
+  height: 132px;
+}
+
+h1
+{
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 1px #0a294b;
+}
+
+h2
+{
+  color: white;
+  font-size: 18px;
+}
+
+.centrovany
+{
+  text-align: center;
+}
+
+article
+{
+  background: url('img/pozadi.png');
+  padding: 30px 0px;
+  border-bottom: 3px solid #3F3F47;
+  border-top: 3px solid #3F3F47;
+}
+
+article header
+{
+    width: 125px;
+    float: left;
+}
+
+article section
+{
+  width: 662px;
+  min-height: 320px;
+  float: left;
+  padding: 20px;
+  color: white;
+}
+
+.cistic
+{
+  clear: both;
+}
+
+#logo
+{
+  background: url('img/logo.png') no-repeat;
+  width: 314px;
+  height: 128px;
+  float: left;
+  margin: 7px 0px 0px 20px;
+}
+
+#logo h1
+{
+  margin: 14px 0px 0px 100px;
+}
+
+#off
+{
+  background: url('img/odhlaseni.png') no-repeat;
+  float: left;
+  margin: 25px 20px 0px 75px;
+  width: 314px;
+  height: 128px;
+}
+
+#off h1
+{
+  margin: 14px 20px 0px 0px;
+}
+
+nav ul
+{
+  margin: 0px;
+  list-style-type: none;
+}
+
+nav ul li
+{
+  float: left;
+  padding: 0px 25px;
+  margin: 25px 5px;
+  font-size: 17px;
+  height: 73px;
+  line-height: 4.3em;
+  background: #3F3F47;
+}
+
+nav a
+{
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li:hover, .aktivni
+{
+  background: #929095;
+  box-shadow: 0px 0px 5px black;
+}
+
+footer
+{
+  height: 40px;
+  color: white;
+  margin: 20px 0 0 30px;
+}
+
+#centrovac
+{
+  margin: 0px auto;
+  width: 960px;
+}
+
+input[type=text], input[type=number]
+{
+  
+}
+
+input[type=submit]
+{
+
+}
+
+table
+{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th
+{
+  border: 3px solid #3F3F47;
+  text-align: center;
+  font-size: 13px;
+  padding: 8px;
+  background: #002e56; 
+}
+
+td
+{
+ background: #989898;
+ text-align: center;
+ font-size: 12px;
+ padding: 8px;
+ border: 3px solid #3F3F47;
+}

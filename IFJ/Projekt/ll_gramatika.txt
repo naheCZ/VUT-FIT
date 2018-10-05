@@ -1,0 +1,48 @@
+PROGRAM      ->     CLASS PROGRAM
+PROGRAM      ->     EOF
+
+CLASS        ->     class id { CLASS_BODY }
+
+CLASS_BODY   ->     static FUNC CLASS_BODY
+CLASS_BODY   ->     static STATIC_VAR CLASS_BODY
+CLASS_BODY   ->     eps
+
+STATIC_VAR   ->     static VAR_DEF ;
+
+FUNC         ->     static type id ( PARAMS ) { STMT_LIST }
+
+PARAMS       ->     VAR_DEF PARAMS
+PARAMS       ->     VAR_DEF , PARAMS
+PARAMS       ->     eps
+
+STMT_LIST    ->     STMT STMT_LIST
+STMT_LIST    ->     eps
+
+STMT         ->     { STMT_LIST }
+STMT         ->     VAR_INIT ;
+STMT         ->     if ( EXPR ) STMT ELSE
+STMT         ->     while ( EXPR ) STMT
+STMT         ->     PRINT ;
+STMT         ->     return EXPR ;
+
+VAR_DEF      ->     type id
+VAR_INIT     ->     VAR_DEF ASSIGN ;
+
+ELSE         ->     else STMT
+ELSE         ->     eps
+
+ASSIGN       ->     = EXPR
+ASSIGN       ->     eps
+
+EXPR         ->     READ
+EXPR         ->     exp
+EXPR         ->     eps
+
+READ         ->     ifj2016 . readInt ( )
+READ         ->     ifj2016 . readDouble ( )
+READ         ->     ifj2016 . readString ( )
+
+PRINT        ->     ifj2016 . print ( CONCAT )
+
+CONCAT       ->     str + CONCAT
+CONCAT       ->     eps

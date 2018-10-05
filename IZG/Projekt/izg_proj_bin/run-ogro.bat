@@ -1,0 +1,1 @@
+izg_proj models/ogro.tri models/ogro.bmp

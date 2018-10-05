@@ -1,0 +1,10 @@
+c203.c: In function 'queueInit':
+c203.c:88:9: warning: statement with no effect [-Wunused-value]
+         q->arr[i] == '*';
+         ^
+c203.c: In function 'queueInit':
+c203.c:88:9: warning: statement with no effect [-Wunused-value]
+         q->arr[i] == '*';
+         ^
+	OK
+

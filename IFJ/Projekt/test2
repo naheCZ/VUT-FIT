@@ -1,0 +1,37 @@
+class classB
+{
+	static int a;
+	static int b;
+	static String s;
+	static int d;
+
+	static void functionB()
+	{
+		{{{}}}
+		int a;
+		if ()
+		{
+			{}
+		}
+		else
+		{
+			{}
+		}
+		while () {}
+	}
+}
+
+class Main
+{
+	static int functionA(int aty, int clk)
+	{
+		int b;
+		b = 0;
+		return b;
+	}
+	static void run()
+	{
+		int a;
+		a = 0;
+	}
+}
