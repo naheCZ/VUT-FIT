@@ -1,3 +1,0 @@
-Pro spuštìní aplikace je nutné mít na poèítaèi nainstalovonou Javu.
-Pokud na vašem poèítatèi Java nainstalovaná není, pøejdìte prosím na následujíci odkaz, kde si budete moci Javu stáhnout.
-http://www.oracle.com/technetwork/java/javase/downloads/jre10-downloads-4417026.html

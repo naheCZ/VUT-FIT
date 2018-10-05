@@ -1,5 +1,0 @@
-<map id="form.CalculatorController" name="form.CalculatorController">
-<area shape="rect" id="node7" href="$classanalysis_1_1precedence_1_1Calculator.html" title="Class for evaluating entered expressions. " alt="" coords="591,213,795,240"/>
-<area shape="rect" id="node8" href="$classanalysis_1_1precedence_1_1Token.html" title="Implementation of token object. " alt="" coords="534,109,715,136"/>
-<area shape="rect" id="node9" href="$classanalysis_1_1precedence_1_1Stack.html" title="Implementation of token stack. " alt="" coords="739,109,918,136"/>
-</map>

@@ -1,1 +1,0 @@
-izg_proj models/yoshi.tri models/yoshi.bmp

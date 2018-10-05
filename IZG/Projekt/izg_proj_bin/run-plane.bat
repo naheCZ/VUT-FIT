@@ -1,1 +1,0 @@
-izg_proj models/plane.tri models/plane.bmp
